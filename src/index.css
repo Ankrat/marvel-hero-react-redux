@@ -1,0 +1,164 @@
+/*
+ CSS var dispo
+ - EDGE 15
+ - Latest 3 versions
+*/
+:root {
+    --main-bg-color: #ffffff;
+
+    --body-text-color: #2c2c2c;
+    --link-text-color: #444444;
+    --link-hover-color: #343434;
+
+    --color-pink: #ff1e9b;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+a {
+    color: var(--link-text-color);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+a:hover {
+    color: var(--link-hover-color);
+    border-color: var(--link-hover-color);
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.component-container {
+    background-color: var(--main-bg-color);
+    color: var(--body-text-color);
+    margin: 0 auto;
+    text-align: center;
+    max-width: 1024px;
+}
+
+.grid-wrapper {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 20px 10px;
+}
+
+.grid-wrapper--single {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 250px auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "heroThumbnail heroSeries"
+        ". heroComics";
+    grid-gap: 20px 10px;
+}
+
+.page-header {
+    color: var(--color-pink);
+}
+
+/* =================== */
+/* List hero component */
+/* =================== */
+.hero-list-item {
+    border: 1px solid var(--color-pink);
+}
+
+.flex-align--bottom {
+    display: flex;
+    flex-direction: column;
+}
+.flex-align--bottom .thumbnail {
+    flex: 1;
+}
+.flex-align--bottom .hero-content-block {
+    padding-top: 1rem;
+}
+.flex-align--bottom .external-links {
+    align-self: flex-end;
+}
+
+.external-links ul {
+    display: flex;
+}
+.external-links li {
+    flex: 1;
+    padding: 0.5rem 0;
+}
+
+.fa-window-restore {
+    margin-right: 5px;
+}
+
+/* ===================== */
+/* Single hero component */
+/* ===================== */
+.singleHero--header {
+    text-align: left;
+    grid-area: heroThumbnail;
+}
+
+.serieList-component {
+    text-align: left;
+    margin-left: 3rem;
+    border: 1px solid var(--color-pink);
+    padding: 1rem;
+}
+
+.series {
+    grid-area: heroSeries;
+}
+
+.comics {
+    grid-area: heroComics;
+}
+
+.serieList-component li span {
+    display: inline-block;
+    padding: 0.5rem 0;
+}
+
+/* ===================== */
+/* General utils */
+/* ===================== */
+
+.u-small {
+    font-size: 0.8rem;
+}
+.u-left {
+    float: left;
+}
+
+.u-cf:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+.loader {
+    font-size: 3rem;
+    margin-top: 25vh;
+}
+.fa-spinner {
+    animation: fa-spin 2s infinite linear;
+}
+
+/* ===================== */
+/* Animation             */
+/* ===================== */
+@keyframes fa-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
